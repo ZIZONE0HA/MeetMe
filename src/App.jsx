@@ -10,14 +10,19 @@ import { useReducer, useRef, createContext } from 'react';
 const mockData = [
   {
     id:1,
-    createdDate: new Date().getTime(),
+    createdDate: new Date("2024-11-19").getTime(),
     emotionId : 1,
     content: "1번 일기",
   },{
     id:2,
-    createdDate: new Date().getTime(),
+    createdDate: new Date("2024-11-18").getTime(),
     emotionId : 2,
     content: "2번 일기",
+  },{
+    id:3,
+    createdDate: new Date("2024-10-18").getTime(),
+    emotionId : 3,
+    content: "3번 일기",
   },
 ]
 
@@ -36,8 +41,8 @@ function reducer(state, action){
   }
 }
 
-const DirayStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DirayStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 function App() {
   const [data, dispatch] = useReducer(reducer, mockData);

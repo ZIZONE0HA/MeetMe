@@ -3,9 +3,11 @@
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 html, body{
+  display: flex;
   margin:  0;
   width: 100%;
   background-color: rgb(246,246,246);

@@ -1,45 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from './Button';
 import './Editor.css';
 import EmotionItem from './EmotionItem';
 import { useNavigate } from 'react-router-dom';
+import emotionList from '../util/constants';
+import { getStringedDate } from '../util/get-stringed-date';
 
-const emotionList = [
-    {
-        emotionId:1,
-        emotionName:"최고"
-    },{
-        emotionId:2,
-        emotionName:"좋아"
-    },{
-        emotionId:3,
-        emotionName:"무난"
-    },{
-        emotionId:4,
-        emotionName:"별로"
-    },{
-        emotionId:5,
-        emotionName:"최악"
-    },
-];
 
-const getStringedDate = (targetDate) =>{
-    let year = targetDate.getFullYear();
-    let month = targetDate.getMonth()+1;
-    let date = targetDate.getDate();
 
-    //2024-11-01 이런 포맷 설정
-    if(month<10){
-        month = `0${month}`;
-    }
-    if(date<10){
-        date = `0${date}`;
-    }
-
-    return `${year}-${month}-${date}`;
-}
-
-const Editor = ({onSubmit}) =>{
+const Editor = ({initData ,onSubmit}) =>{
 
     //사용자의 입력 보관
     const [input, setInput] = useState({
@@ -50,6 +19,17 @@ const Editor = ({onSubmit}) =>{
 
     const nav = useNavigate();
 
+    useEffect(()=>{
+        if(initData){
+            setInput({
+                // Date() 객체 <-> TimeStamp
+                ...initData,
+                createdDate : new Date(Number(initData.createdDate)),
+            })
+        }
+    },[initData]);
+
+    //입력된 값 받음
     const onChangeInput = (e) =>{
 
         let name = e.target.name;

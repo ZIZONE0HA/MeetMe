@@ -10,7 +10,7 @@ const DiaryItem = ({id, emotionId, createdDate, content}) =>{
 
     return(
         <div className="DiaryItem">
-            
+
             {/* img */}
             <div className={classNames("img_section", `img_section${emotionId}`)}
             onClick={()=>nav(`/diary/${id}`)}>
@@ -18,7 +18,7 @@ const DiaryItem = ({id, emotionId, createdDate, content}) =>{
             </div>
 
             {/* info */}
-            <div className="info_section">
+            <div className="info_section" onClick={()=>nav(`/diary/${id}`)}>
                 <div className="created_date">
                     {new Date(createdDate).toLocaleDateString()}
                 </div>

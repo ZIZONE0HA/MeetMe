@@ -33,7 +33,7 @@ const DiaryList = ({data}) =>{
                     <option value={"emotion4"}>☹️별로</option>
                     <option value={"emotion5"}>😡최악</option>
                 </select>
-                <Button text={"오늘의 감정을 돌아보자"} type={"POSITIVE"}
+                <Button text={"오늘의 감정 기록하기"} type={"POSITIVE"}
                 onClick={()=>nav("/new")}/>
             </div>
             <div className="list_wrapper">

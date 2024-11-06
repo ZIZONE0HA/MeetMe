@@ -41,7 +41,7 @@ function reducer(state, action){
   }
 }
 
-export const DirayStateContext = createContext();
+export const DiaryStateContext = createContext();
 export const DiaryDispatchContext = createContext();
 
 function App() {
@@ -82,7 +82,7 @@ function App() {
   return (
   <>
 
-  <DirayStateContext.Provider value={data}>
+  <DiaryStateContext.Provider value={data}>
     <DiaryDispatchContext.Provider value={{
       onCreate, onUpdate, onDelete
     }}>
@@ -94,7 +94,7 @@ function App() {
         <Route path="*" element={<Notfound/>}/>
       </Routes>
     </DiaryDispatchContext.Provider>
-  </DirayStateContext.Provider>
+  </DiaryStateContext.Provider>
   </>
   );
 }

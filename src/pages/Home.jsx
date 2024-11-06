@@ -1,9 +1,8 @@
-import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
 import { useContext, useState } from "react";
-import { DirayStateContext } from "../App";
+import { DiaryStateContext } from "../App";
 
 
 const getMonthlyData = (pivotDate, data) => {
@@ -26,11 +25,10 @@ const getMonthlyData = (pivotDate, data) => {
 }
 
 const Home =() => {
-    const data = useContext(DirayStateContext);
+    const data = useContext(DiaryStateContext);
     const [pivotDate, setPivotDate] = useState(new Date());
 
     const montlyData = getMonthlyData(pivotDate, data);
-    console.log(montlyData);
 
     const onDecreaseMonth = () =>{
         setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth()-1));

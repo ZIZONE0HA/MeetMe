@@ -5,48 +5,77 @@ import New from './pages/New';
 import Diary from './pages/Diary';
 import Edit from './pages/Edit';
 import Notfound from './pages/Notfound';
-import { useReducer, useRef, createContext } from 'react';
-
-const mockData = [
-  {
-    id:1,
-    createdDate: new Date("2024-11-19").getTime(),
-    emotionId : 1,
-    content: "1번 일기",
-  },{
-    id:2,
-    createdDate: new Date("2024-11-18").getTime(),
-    emotionId : 2,
-    content: "2번 일기",
-  },{
-    id:3,
-    createdDate: new Date("2024-10-18").getTime(),
-    emotionId : 3,
-    content: "3번 일기",
-  },
-]
+import { useReducer, useRef, createContext, useEffect, act, useState } from 'react';
 
 
 function reducer(state, action){
+
+  let nextState;
+
   switch(action.type){
+    case "INIT":
+      return action.data;
+
     case "CREATE" : 
-      return [action.data, ...state];
+      { nextState= [action.data, ...state];
+        break;
+      }
     case "UPDATE" : 
-      return state.map((item)=> String(item.id) === String(action.data.id)
-      ? action.data : item);
+      { nextState = state.map((item)=> 
+        String(item.id) === String(action.data.id)
+        ? action.data : item);
+        break;
+      }
     case "DELETE" : 
-      return state.filter((item)=> String(item.id) !== String(action.id));
-    default :
+      { nextState = state.filter((item)=> 
+        String(item.id) !== String(action.id));
+        break;
+      }
+        default :
       return state;
   }
+
+  localStorage.setItem("dairy", JSON.stringify(nextState));
+  return nextState;
 }
 
 export const DiaryStateContext = createContext();
 export const DiaryDispatchContext = createContext();
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(3);
+  const [isLoading, setIsLoeading] = useState(true);
+  const [data, dispatch] = useReducer(reducer, []);
+  const idRef = useRef(0);
+
+  useEffect(()=>{
+    const storedData = localStorage.getItem("diary");
+
+    if(!storedData){
+      setIsLoeading(false);
+      return;
+    }
+
+    const parsedData = JSON.parse(storedData);
+    if(!Array.isArray(parsedData)){
+      setIsLoeading(false);
+      return;
+    }
+
+    let maxId = 0;
+    parsedData.forEach((item) => {
+      if(Number(item.id) > maxId){
+        maxId = Number(item.id)
+      }
+    });
+
+    idRef.current = maxId +1;
+
+    dispatch({
+      type : "INIT",
+      data : parsedData,
+    });
+    setIsLoeading(false);
+  },[]);
 
   //새로운 일기 추가
   const onCreate = (createdDate, emotionId, content) =>{
@@ -77,6 +106,10 @@ function App() {
       type:"DELETE",
       id,
     });
+  }
+
+  if(isLoading){
+    return <div> 감정 정리중... </div>
   }
 
   return (

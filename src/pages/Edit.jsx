@@ -5,6 +5,7 @@ import Editor from "../components/Editor";
 import { useContext } from "react";
 import { DiaryDispatchContext, DiaryStateContext } from "../App";
 import useDiary from "../hooks/useDiary";
+import useIsMobile from "../hooks/useIsMobile";
 
 
 
@@ -13,14 +14,13 @@ const Edit =() => {
     const nav = useNavigate();
     const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
     const curDiaryItem = useDiary(params.id);
-
-    const isMobile = window.innerWidth <= 480;
+    const isMobile = useIsMobile();
 
 
     //일기 삭제
     const onClickDelete = () =>{
         if(
-            window.confirm("기록을 삭제할까요? 다시 복구 되지 않아요...")
+            window.confirm("기록을 삭제할까요? \n 다시 복구 되지 않아요...")
         ){
             onDelete(params.id);
             nav('/',{replace:true});

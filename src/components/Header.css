@@ -3,6 +3,7 @@
     align-items: center;
     padding: 20px 0;
     border-bottom: 1px solid rgb(226,226,226);
+    flex-wrap: wrap;
 }
 
 .Header > div{
@@ -12,8 +13,11 @@
 .Header .header_center{
     width: 50%;
     justify-content: center;
-    font-size: 25px;
-}
+    font-size: 25px; 
+    word-break: keep-all;
+    white-space: normal;
+    text-align: center;
+} 
 
 .Header .header_left{
     width: 25%;

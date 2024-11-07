@@ -14,6 +14,8 @@ const Edit =() => {
     const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
     const curDiaryItem = useDiary(params.id);
 
+    const isMobile = window.innerWidth <= 480;
+
 
     //일기 삭제
     const onClickDelete = () =>{
@@ -35,9 +37,9 @@ const Edit =() => {
         <div>
             <Header
             title={"다시 돌아보기"}
-            leftChild={<Button text={"< 뒤로 가기"}
+            leftChild={<Button text={isMobile ? "<" : "<뒤로가기"}
             onClick={()=>{nav(-1)}}/>}
-            rightChild={<Button text={"삭제하기"} type={"NEGATIVE"}
+            rightChild={<Button text={isMobile ? "삭제" : "삭제하기"} type={"NEGATIVE"}
             onClick={onClickDelete}/>}/>
             
             <Editor initData = {curDiaryItem} onSubmit={onSubmit}/>

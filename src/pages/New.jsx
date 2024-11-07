@@ -4,10 +4,12 @@ import Editor from "../components/Editor";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { DiaryDispatchContext } from "../App";
+import useIsMobile from "../hooks/useIsMobile";
 
 const New =() => {
     const {onCreate} = useContext(DiaryDispatchContext);
     const nav = useNavigate();
+    const isMobile = useIsMobile();
 
     const onSubmit = (input) =>{
         onCreate(input.createdDate.getTime(), input.emotionId, input.content);
@@ -16,9 +18,9 @@ const New =() => {
 
     return(
         <div>
-            <Header title={"오늘의 감정 들여다보기"}
+            <Header title={"오늘의 나"}
             leftChild={
-            <Button onClick={()=>nav(-1)} text={"< 뒤로가기"}/>}/>
+            <Button text={isMobile ? "<" : "<뒤로가기"} onClick={()=>nav(-1)} />}/>
             <Editor onSubmit={onSubmit}/>
         </div>
     );

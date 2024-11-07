@@ -42,6 +42,8 @@
 
 .DiaryItem .info_section .content{
     font-size: 18px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
 .DiaryItem .button_section{
     min-width: 70px;

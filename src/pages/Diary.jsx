@@ -4,11 +4,13 @@ import Button from "../components/Button";
 import Viewer from "../components/Viewer";
 import useDiary from "../hooks/useDiary";
 import { getStringedDate } from "../util/get-stringed-date";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Diary =() => {
     const params = useParams();
     const nav = useNavigate();
     const curDiaryItem = useDiary();
+    const isMobile = useIsMobile();
 
     if(!curDiaryItem){
         return <div>기록을 찾지 못했습니다</div>
@@ -24,9 +26,9 @@ const Diary =() => {
     return(
         <div>
             <Header title={`${title} 기록`} 
-            leftChild={<Button text={"<뒤로가기"}
+            leftChild={<Button text={isMobile ? "<" : "<뒤로가기"}
             onClick={()=>nav(-1)}/>} 
-            rightChild={<Button text={"수정하기"}
+            rightChild={<Button text={isMobile ? "수정" : "수정하기"}
             onClick={()=>nav(`/edit/${params.id}`)}/>}/>
 
             <Viewer emotionId={emotionId} content={content}/>

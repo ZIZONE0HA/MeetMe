@@ -86,6 +86,7 @@ MeetMe/
 <br/><br/>
 
 ## 3. 플로우차트
+![Home](https://github.com/user-attachments/assets/666b2d7a-5418-4370-ab64-a88767de39b2)
 
 
 <br/><br/>

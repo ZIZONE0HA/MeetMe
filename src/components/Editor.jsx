@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from './Button';
 import './Editor.css';
 import EmotionItem from './EmotionItem';
@@ -18,6 +18,9 @@ const Editor = ({initData ,onSubmit}) =>{
     });
 
     const nav = useNavigate();
+
+    //일기 내용 미입력시
+    const contentRef = useRef(null);
 
     useEffect(()=>{
         if(initData){
@@ -46,6 +49,11 @@ const Editor = ({initData ,onSubmit}) =>{
     };
 
     const onClickSubmitButton = () =>{
+        if(!input.content.trim()){
+            alert("남길 내용이 없어요!");
+            contentRef.current.focus();
+            return;
+        }
         onSubmit(input);
     }
 
@@ -79,6 +87,7 @@ const Editor = ({initData ,onSubmit}) =>{
                 <h4>오늘의 일기</h4>
                 <textarea name='content'
                 value={input.content}
+                ref={contentRef}
                 onChange={onChangeInput}
                 placeholder='오늘 하루는 어땠나요?'></textarea>
             </section>

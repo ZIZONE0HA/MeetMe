@@ -4,6 +4,7 @@
     justify-content: space-between;
     padding: 15px 0;
     border-bottom: 1px solid rgb(236,236,236);
+    align-items: flex-start;
 }
 
 .DiaryItem .img_section{
@@ -13,6 +14,7 @@
     justify-content: center;
     border-radius: 5px;
     cursor: pointer;
+
 }
 
 .DiaryItem .img_section1{
@@ -34,6 +36,7 @@
 .DiaryItem .info_section{
     flex: 1;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .DiaryItem .info_section .created_date{
@@ -50,4 +53,5 @@
 }
 .DiaryItem .button_section{
     min-width: 70px;
+    align-self: flex-start;
 }

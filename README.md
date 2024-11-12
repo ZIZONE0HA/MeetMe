@@ -113,23 +113,28 @@ MeetMe/
   
 <br/><br/>
 
-## 5. 구현 동작
-<br/><br/><br/>
+## 5. 구현 동작   
 
 ### Home Page
 일기 목록 데이터를 월별로 볼 수 있고, 감정상태에 따라 필터링을 할 수 있습니다.
-<br/><br/><br/>
+<br/><br/>
  
 **[월별 정렬]**  
-<br/><br/>
-https://github.com/user-attachments/assets/49813f46-fbcd-4cd0-b841-df535e7af10a
+
+
+
+https://github.com/user-attachments/assets/34763f1f-547f-4618-bbf2-59ff4df72d13
+
+
 
 
 <br/><br/><br/>
 **[기분별 필터링]**
-  
-  <br/><br/>
-https://github.com/user-attachments/assets/52358832-035e-472d-9641-c5a9f5b6478f
+
+
+
+https://github.com/user-attachments/assets/7f4cafd3-f4fd-472f-8d9b-b5bd7f11955d
+
 
 
 
@@ -137,7 +142,7 @@ https://github.com/user-attachments/assets/52358832-035e-472d-9641-c5a9f5b6478f
 <br/><br/><br/>
 ### New Page
 새로운 일기를 작성합니다.
-<br/><br/><br/>
+<br/>
   
 https://github.com/user-attachments/assets/72b26cc2-2dcc-47b2-b0ea-0bfaffa32299   
 
@@ -145,17 +150,17 @@ https://github.com/user-attachments/assets/72b26cc2-2dcc-47b2-b0ea-0bfaffa32299
 
 ### Edit page  
 작성한 일기데이터를 수정/삭제 합니다.
-   <br/><br/><br/>
+   <br/><br/>
 **[일기 데이터 수정]**
+<br/>
 
-<br/><br/>
 
 https://github.com/user-attachments/assets/c8228032-8fea-4ef9-85eb-6a6f337de07c
 
 
 <br/><br/><br/>
 **[일기 데이터 삭제]**
-<br/><br/>
+<br/>
 
 https://github.com/user-attachments/assets/a3ae5d23-a68f-4e9d-80b0-f0fe79c9dec1
   
@@ -164,8 +169,11 @@ https://github.com/user-attachments/assets/a3ae5d23-a68f-4e9d-80b0-f0fe79c9dec1
   
 ### Diary Page 
 선택한 일기를 열람합니다.  
-<br/><br/><br/>
-https://github.com/user-attachments/assets/7a01eb01-722e-43ef-a853-9ba90abf0a01
+
+
+https://github.com/user-attachments/assets/35814dc8-ed95-4f8a-b43e-7dfa2b2f9131
+
+
 
 <br/><br/><br/>
 
@@ -173,18 +181,16 @@ https://github.com/user-attachments/assets/7a01eb01-722e-43ef-a853-9ba90abf0a01
 ### pc 환경 vs 모바일 환경 비교   
 모바일 환경에서 접속할 경우 width가 좁아서 요소가 영역을 벗어나거나 넘어가는 문제를 해결하기 위해   
 Header 영역의 버튼 등의 텍스트가 바뀌게 설정하였습니다.    
-
-
-<br/><br/><br/>
+<br/>
       
     
 **[pc]**
-  <br/><br/>
-![pc](https://github.com/user-attachments/assets/97611b21-5b93-45d7-980e-94e8f0213a2e)  
-<br/><br/><br/>
 
-  
+![pc](https://github.com/user-attachments/assets/97611b21-5b93-45d7-980e-94e8f0213a2e)  
+<br/><br/>
+
+
 **[모바일]**  
-  <br/><br/>
+
 ![mobile](https://github.com/user-attachments/assets/5fa9b0d6-7b27-44d1-ba76-ba88c5c9dd65)
 

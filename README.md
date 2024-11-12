@@ -117,25 +117,72 @@ MeetMe/
 
 ### Home Page
 일기 목록 데이터를 월별로 볼 수 있고, 감정상태에 따라 필터링을 할 수 있습니다.
+ <br/><br/>
+ 
+**[월별 정렬]**  
+  <br/>
+  
+https://github.com/user-attachments/assets/49813f46-fbcd-4cd0-b841-df535e7af10a
 
-**[월별 정렬]**
 
+  <br/><br/>
 **[기분별 필터링]**
+  
+  <br/>
+https://github.com/user-attachments/assets/3d47da1e-2e6a-4d56-80be-208552aa8cb5
 
-
+  
+<br/><br/>
 ### New Page
 새로운 일기를 작성합니다.
+<br/>
+  
+https://github.com/user-attachments/assets/72b26cc2-2dcc-47b2-b0ea-0bfaffa32299   
+
+<br/><br/>
 
 ### Edit page  
 작성한 일기데이터를 수정/삭제 합니다.
-   
+   <br/>
 **[일기 데이터 수정]**
 
+<br/>
+
+https://github.com/user-attachments/assets/c8228032-8fea-4ef9-85eb-6a6f337de07c
+
+
+<br/><br/>
 **[일기 데이터 삭제]**
+<br/>
 
-
-
+https://github.com/user-attachments/assets/a3ae5d23-a68f-4e9d-80b0-f0fe79c9dec1
+  
+  
+  <br/><br/>
+  
 ### Diary Page 
-선택한 일기를 열람합니다.
-![Diary](https://github.com/user-attachments/assets/09069cb9-2320-44e7-ba07-44b392cced4c)
+선택한 일기를 열람합니다.  
+<br/>
+https://github.com/user-attachments/assets/7a01eb01-722e-43ef-a853-9ba90abf0a01
+
+<br/><br/>
+
+    
+### pc 환경 vs 모바일 환경 비교   
+모바일 환경에서 접속할 경우 width가 좁아서 요소가 영역을 벗어나거나 넘어가는 문제를 해결하기 위해   
+Header 영역의 버튼 등의 텍스트가 바뀌게 설정하였습니다.    
+
+
+<br/><br/>
+      
+    
+**[pc]**
+  <br/>
+![pc](https://github.com/user-attachments/assets/97611b21-5b93-45d7-980e-94e8f0213a2e)  
+<br/><br/>
+
+  
+**[모바일]**  
+  <br/>
+![mobile](https://github.com/user-attachments/assets/5fa9b0d6-7b27-44d1-ba76-ba88c5c9dd65)
 
